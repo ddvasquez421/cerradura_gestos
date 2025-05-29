@@ -78,8 +78,8 @@ st.title("🛡️ Portal Encantado de la Fortaleza")
 
 # ---- IMAGEN DEL DRAGÓN DESDE GITHUB ----
 # Asegúrate de reemplazar 'TU_USUARIO' y 'TU_REPO' con los valores correctos de tu repositorio de GitHub.
-st.image("https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/dragon.jpeg",
-          caption="🐉 Guardián del Portal", use_column_width=True)
+st.image("https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/dragon.jpg",
+          caption="🐉 Guardián del Portal", use_container_width=True)
 
 st.markdown("### ✨ *Invoca con tu gesto o palabra el poder de abrir o sellar la puerta mágica...*")
 
