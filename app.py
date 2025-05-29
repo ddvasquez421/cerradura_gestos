@@ -12,7 +12,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://raw.githubusercontent.com/ddvasquez421/cerradura_gestos/main/dragon.jpg"); /* ¡Asegúrate de reemplazar con la URL correcta de tu imagen! */
+        background-image: url("https://raw.githubusercontent.com/ddvasquez421/cerradura_gestos/main/dreigon.jpg"); /* ¡Asegúrate de reemplazar con la URL correcta de tu imagen! */
         background-size: cover;
         background-attachment: fixed;
         color: #e0e0e0; /* Color de texto para contrastar con el fondo */
