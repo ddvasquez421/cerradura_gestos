@@ -62,3 +62,18 @@ if img_file_buffer is not None:
       st.header('Cerrando')
       client1.publish("IMIA","{'gesto': 'Cierra'}",qos=0, retain=False)
       time.sleep(0.2)  
+
+
+# ---- HERRAMIENTA 2: COMANDO ESCRITO ----
+st.subheader("📖 Hechizo Escrito - Sello por Palabra")
+user_command = st.text_input("✍️ Escribe 'abrir' o 'cerrar' como si fueran conjuros").strip().lower()
+
+if st.button("🔮 Invocar Hechizo"):
+    if user_command == "abrir":
+        st.success("🔓 ¡Hechizo aceptado! La entrada se abre ante ti.")
+        client1.publish("PIPPO", "{'gesto': 'Abre'}", qos=0, retain=False)
+    elif user_command == "cerrar":
+        st.warning("🔒 ¡Puerta cerrada! El conjuro ha sido sellado.")
+        client1.publish("PIPPO", "{'gesto': 'Cierra'}", qos=0, retain=False)
+    else:
+        st.error("🚫 Palabra no reconocida por los grimorios. Usa 'abrir' o 'cerrar'.")
