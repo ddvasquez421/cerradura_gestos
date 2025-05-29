@@ -15,32 +15,32 @@ st.markdown(
         background-image: url("https://raw.githubusercontent.com/ddvasquez421/cerradura_gestos/main/dragon.jpg"); /* ¡Asegúrate de reemplazar con la URL correcta de tu imagen! */
         background-size: cover;
         background-attachment: fixed;
-        color: #e0e0e0; /* Color de texto para contrastar con el fondo */
+        color: #333333; /* Color de texto general cambiado a negro oscuro */
         font-family: 'Georgia', serif; /* Una fuente que evoca lo antiguo */
     }
     .st-emotion-cache-1wv7rf0 e1nzp4z51 { /* Titulo */
-        color: #FFD700; /* Oro */
+        color: #8B4513; /* Un marrón más oscuro para el título */
         text-align: center;
-        text-shadow: 2px 2px 4px #000000;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
         font-size: 3em;
         margin-bottom: 0.5em;
     }
     .st-emotion-cache-10qj01k e1nzp4z50 { /* Subtitulos */
-        color: #C0C0C0; /* Plata */
+        color: #4B0082; /* Un púrpura oscuro para los subtítulos */
         text-align: center;
-        text-shadow: 1px 1px 2px #000000;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         font-size: 1.8em;
         margin-top: 1em;
         margin-bottom: 0.8em;
     }
     .st-emotion-cache-nahz7x e1nzp4z5 { /* Texto de entrada */
-        background-color: rgba(40, 44, 52, 0.7); /* Fondo semi-transparente para el input */
+        background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente más claro para el input */
         border: 2px solid #8B4513; /* Marrón para bordes de madera */
-        color: #e0e0e0;
+        color: #333333; /* Texto del input en negro oscuro */
     }
     .st-emotion-cache-vk337c e1nzp4z5 { /* Botones */
         background-color: #A52A2A; /* Rojo oscuro para botones de sellado */
-        color: white;
+        color: white; /* Color del texto de los botones sigue siendo blanco para contraste */
         border: 1px solid #8B0000;
         padding: 0.7em 1.5em;
         border-radius: 5px;
@@ -52,7 +52,7 @@ st.markdown(
     /* Estilos para los mensajes de éxito, advertencia y error */
     .st-emotion-cache-p2w9n1 e1nzp4z5 { /* Mensajes de exito */
         background-color: rgba(34, 139, 34, 0.7); /* Verde bosque */
-        color: white;
+        color: white; /* Color del texto de éxito sigue siendo blanco */
         padding: 1em;
         border-radius: 8px;
         margin-top: 1em;
@@ -60,7 +60,7 @@ st.markdown(
     }
     .st-emotion-cache-1c70e5b e1nzp4z5 { /* Mensajes de advertencia */
         background-color: rgba(255, 140, 0, 0.7); /* Naranja oscuro */
-        color: white;
+        color: white; /* Color del texto de advertencia sigue siendo blanco */
         padding: 1em;
         border-radius: 8px;
         margin-top: 1em;
@@ -68,11 +68,16 @@ st.markdown(
     }
     .st-emotion-cache-r423a2 e1nzp4z5 { /* Mensajes de error */
         background-color: rgba(178, 34, 34, 0.7); /* Rojo fuego */
-        color: white;
+        color: white; /* Color del texto de error sigue siendo blanco */
         padding: 1em;
         border-radius: 8px;
         margin-top: 1em;
         border: 2px solid #B22222;
+    }
+    /* Añadimos estilos para el texto dentro de markdown, st.write, etc. */
+    p, li, div {
+        color: #333333 !important; /* Asegura que el texto general sea negro oscuro */
+        text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.5); /* Pequeña sombra blanca para más legibilidad en fondos claros */
     }
     </style>
     """,
