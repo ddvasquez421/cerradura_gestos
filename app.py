@@ -1,10 +1,9 @@
 import paho.mqtt.client as paho
 import time
-import json
 import streamlit as st
-import cv2
 import numpy as np
 from PIL import Image
+from keras.models import load_model # Importación de load_model movida al inicio
 
 # ---- CONFIGURACIÓN DE PÁGINA ----
 st.set_page_config(page_title="🔐 Portal de la Fortaleza", page_icon="🛡️", layout="centered")
@@ -17,7 +16,7 @@ st.markdown("""
         color: #3e2f1c;
     }
     .stApp {
-        background-image: url('https://i.imgur.com/1ZQZ1Zv.png');
+        background-image: url('https://i.imgur.com/1ZQZ1Zv.jpg'); /* Cambiado de .png a .jpg */
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -63,15 +62,12 @@ client1.connect(broker,port)
 # Si no lo tienes, este código no funcionará, ya que el modelo es esencial para la funcionalidad.
 # Para evitar errores si el modelo no existe, puedes añadir un bloque try-except.
 try:
-    from keras.models import load_model
     model = load_model('keras_model.h5')
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-except ImportError:
-    st.error("Error: La librería 'keras' no está instalada. Por favor, instálala usando 'pip install keras'.")
-    st.stop() # Detiene la ejecución de Streamlit si keras no está disponible
-except Exception as e:
-    st.error(f"Error al cargar el modelo: {e}. Asegúrate de que 'keras_model.h5' existe y es un modelo válido.")
-    st.stop()
+except Exception as e: # Catch all exceptions related to model loading
+    st.error(f"Error al cargar el modelo: {e}. Asegúrate de que 'keras_model.h5' existe, es un modelo válido y que TensorFlow/Keras están instalados.")
+    st.stop() # Detiene la ejecución de Streamlit si hay un problema al cargar el modelo
+
 
 # ---- INTERFAZ ----
 st.title("🛡️ Portal Encantado de la Fortaleza")
@@ -79,7 +75,7 @@ st.title("🛡️ Portal Encantado de la Fortaleza")
 # ---- IMAGEN DEL DRAGÓN DESDE GITHUB ----
 # Asegúrate de reemplazar 'TU_USUARIO' y 'TU_REPO' con los valores correctos de tu repositorio de GitHub.
 st.image("https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/dragon.jpg",
-          caption="🐉 Guardián del Portal", use_container_width=True)
+          caption="🐉 Guardián del Portal", use_container_width=True) # Cambiado a use_container_width
 
 st.markdown("### ✨ *Invoca con tu gesto o palabra el poder de abrir o sellar la puerta mágica...*")
 
